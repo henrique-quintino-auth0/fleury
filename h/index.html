@@ -14,6 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
     <script src="/auth0.js"></script>
     <script src="/cordova-auth0-plugin.js"></script>
+    
+    <script src="https://cdn.auth0.com/js/auth0/9.16/auth0.min.js"></script>
+    <script src="https://cdn.auth0.com/js/polyfills/1.0/object-assign.min.js"></script>
 
     <style>
       .row {
@@ -237,7 +240,7 @@
             <input
               class="form-control"
               id="client-login-realm"
-              value=""
+              value="Username-Password-Authentication"
               placeholder="Realm name; leave blank to use tenant default"
             />
           </p>
@@ -465,11 +468,11 @@
         var domain =
           $domainInput.val() ||
           Cookies.get('auth0_domain') ||
-          'brucke.auth0.com';
+          'play-hmq.us.auth0.com';
         var clientId =
           $clientIdInput.val() ||
           Cookies.get('auth0_client_id') ||
-          'k5u3o2fiAA8XweXEEX604KCwCjzjtMU6';
+          'eCY5bQdXl65UlusOhkpq1pCcwtXgCSDM';
         var clientIdPwl =
           $clientIdPwl.val() ||
           Cookies.get('auth0_client_id_pwl') ||
@@ -477,9 +480,9 @@
         var userEmail =
           $userEmailInput.val() ||
           Cookies.get('auth0_user_email') ||
-          'johnfoo@gmail.com';
+          'hmello+2@gmail.com';
         var userPass =
-          $userPwdInput.val() || Cookies.get('auth0_user_pw') || '1234';
+          $userPwdInput.val() || Cookies.get('auth0_user_pw') || 'Auth0Demo0';
         var configOrganization =
           $configOrganization.val() ||
           Cookies.get('auth0_config_organization') ||
