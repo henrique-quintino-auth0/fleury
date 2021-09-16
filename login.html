@@ -108,17 +108,19 @@
       var idx = (window.location.search).indexOf("teste=");
       conf = (window.location.search).substr(idx+6);
       
-      var options = JSON.parse(        
-        decodeURIComponent(escape(window.atob(conf)))
-      );
-      options.domain = 'play-hmq.us.auth0.com';
-      /*
+      var config = JSON.parse(        
+        decodeURIComponent(escape(window.atob(conf)))        
+      );      
+      
+
       const options = {
         domain: 'play-hmq.us.auth0.com',
         clientID: 'ZwzCDPR67eL38QsqbQqY10NXdYqxzW91',
         redirectUri: 'http://localhost:4200',
-        responseType: 'id_token token'
-      }; */            
+        responseType: 'id_token token',
+        nonce: config.internalOptions.nonce,
+        state: config.internalOptions.state
+      };
 
       window.onload = function() {
         const webAuth = new auth0.WebAuth(options);
