@@ -108,9 +108,10 @@
       var idx = (window.location.search).indexOf("teste=");
       conf = (window.location.search).substr(idx+6);
       
-      const options = JSON.parse(        
+      var options = JSON.parse(        
         decodeURIComponent(escape(window.atob(conf)))
       );
+      options.domain = 'play-hmq.us.auth0.com';
       /*
       const options = {
         domain: 'play-hmq.us.auth0.com',
