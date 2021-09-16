@@ -105,13 +105,19 @@
   <script src="https://cdn.auth0.com/js/polyfills/1.0/object-assign.min.js"></script>
   <script>
 
-
+      var idx = (window.location.search).indexOf("teste=");
+      conf = (window.location.search).substr(idx+6);
+      
+      const options = JSON.parse(        
+        decodeURIComponent(escape(window.atob(conf)))
+      );
+      /*
       const options = {
         domain: 'play-hmq.us.auth0.com',
         clientID: 'ZwzCDPR67eL38QsqbQqY10NXdYqxzW91',
         redirectUri: 'http://localhost:4200',
         responseType: 'id_token token'
-      };            
+      }; */            
 
       window.onload = function() {
         const webAuth = new auth0.WebAuth(options);
