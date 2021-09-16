@@ -162,11 +162,16 @@
           realm: databaseConnection,
           username: username,
           password: password,
-          responseType: 'code'      
-        }, function(err) {
-          if (err) displayError(err);
-          button.disabled = false;
-        });
+          responseType: 'code',
+          onRedirecting: function(done) {
+              console.log('On redirecting..');
+              done();
+            }
+          },
+          function(err) {
+            console.error(err);
+            }
+          );        
       }
 
       function signup() {
