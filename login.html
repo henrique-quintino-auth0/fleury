@@ -153,8 +153,7 @@
           realm: databaseConnection,
           username: username,
           password: password,
-          responseType: 'id_token',
-          responseMode : 'form_post'
+          responseType: 'code'      
         }, function(err) {
           if (err) displayError(err);
           button.disabled = false;
