@@ -152,7 +152,8 @@
         webAuth.login({
           realm: databaseConnection,
           username: username,
-          password: password      
+          password: password,
+          responseType: 'id_token'      
         }, function(err) {
           if (err) displayError(err);
           button.disabled = false;
